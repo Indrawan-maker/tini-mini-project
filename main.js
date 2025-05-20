@@ -8,12 +8,11 @@ const day = document.getElementById("day")
 let good = document.querySelector("h2")
 
 
-// let formattedTime = new Date().toLocaleTimeString('en-US');
-// console.log(formattedTime)
+
 let name;
-// do {
-//     name = prompt("silahkan masukan nama kakak😊")
-// } while (!name || name.trim() === "")
+do {
+    name = prompt("silahkan masukan nama kakak😊")
+} while (!name || name.trim() === "")
 
 
 // pengaturan waktu
