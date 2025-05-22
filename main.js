@@ -8,19 +8,16 @@ const day = document.getElementById("day")
 let good = document.querySelector("h2")
 
 
-
-let name;
-do {
-    name = prompt("silahkan masukan nama kakak😊")
-} while (!name || name.trim() === "")
-
-
-// pengaturan waktu
+// pengaturan tampilan waktu
 let currentDateTime = new Date();
 let currentHours = currentDateTime.getHours()
 let currentMinutes = currentDateTime.getMinutes()
 let currentDate = currentDateTime.toDateString()
 
+let name;
+do {
+    name = prompt("silahkan masukan nama kakak😊")
+} while (!name || name.trim() === "")
 if (currentHours >= 4 && currentHours <= 9) {
     good.textContent = `Good Morning, ${name}!`
 } else if (currentHours >= 10 && currentHours <= 14) {
@@ -35,26 +32,33 @@ function Time(num) {
 }
 let currentTime = Time(currentHours) + ":" + Time(currentMinutes)
 
-console.info(currentMinutes)
-console.info(currentHours)
 time.textContent = currentTime
 day.textContent = currentDate
 
+
+
+    const colors = ["antiquewhite", "midnightblue" , "orange", "aquamarine"]
+    let colorCount = 0
+
+
 function changebg(color) {
     document.body.style.backgroundColor = color
+    // localStorage.setItem()
 }
 
 
+
+
+btn.addEventListener('click', (function () {
+    let coloros = colors[colorCount]
+    changebg(coloros)
+    colorCount = (colorCount + 1) % colors.length
+}))
 
 function changeText(text, textt) {
     h.textContent = text
     p.textContent = textt
 }
-
-
-btn.addEventListener('click', (function () {
-    changebg("antiquewhite")
-}))
 
 secBtn.addEventListener('click', function () {
     console.log("tombol 2 di klik")
